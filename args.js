@@ -1,4 +1,1 @@
-function hello() {
-  console.dir(global);
-}
-hello();
+console.dir(arguments);
