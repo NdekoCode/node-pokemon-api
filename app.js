@@ -1,5 +1,5 @@
 import Express from "express";
-import basicRoutes, { imagesRoutes } from "./routes/routes.js";
+import basicRoutes, { imagesRoutes, imagesRoutesMid } from "./routes/routes.js";
 const app = Express();
 const PORT = 3000;
 
@@ -8,3 +8,4 @@ app.listen(PORT, () =>
 );
 basicRoutes(app);
 imagesRoutes(app);
+imagesRoutesMid(app);

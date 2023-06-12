@@ -1,5 +1,8 @@
 import { getProducts } from "../product.js";
-
+const requestMid = (req, res, next) => {
+  console.log("Middlewared called");
+  next();
+};
 /**
  *
  * @param {Express} app
@@ -25,4 +28,15 @@ export function imagesRoutes(app) {
     .route("/images")
     .get((req, res, next) => res.send("GET request called"))
     .post((req, res, next) => res.end("POST request send"));
+}
+export function imagesRoutesMid(app) {
+  app
+    .route("/images/public")
+    .all(requestMid)
+    .get((req, res) => {
+      res.send("GET route Image called after middleware");
+    })
+    .post((req, res) => {
+      res.send("POST images callend after middleware");
+    });
 }
