@@ -20,3 +20,9 @@ export default function basicRoutes(app) {
     res.json(products);
   });
 }
+export function imagesRoutes(app) {
+  app
+    .route("/images")
+    .get((req, res, next) => res.send("GET request called"))
+    .post((req, res, next) => res.end("POST request send"));
+}
